@@ -1,26 +1,438 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>avnl-employee-hub-portal</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="avnl-employee-hub-portal" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <title>AVNL Employee Management System</title>
+    <meta name="description" content="Armed Vehicle Nigam Limited - Employee Management Portal" />
+    <meta name="author" content="AVNL Avadi" />
+    <link rel="stylesheet" href="src/styles.css">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+      <div class="login-background"></div>
+      <div class="login-content">
+        <div class="login-header">
+          <div class="logo-container">
+            <div class="logo-shield">🛡️</div>
+            <div class="logo-vehicle">🚗</div>
+          </div>
+          <h1 class="company-name">AVNL</h1>
+          <h2 class="company-full-name">Armed Vehicle Nigam Limited</h2>
+          <p class="company-location">Avadi, Chennai - Defence Manufacturing Division</p>
+          <div class="system-title">
+            <span class="system-icon">👥</span>
+            <span>Employee Management System</span>
+          </div>
+        </div>
+
+        <div class="login-card">
+          <div class="login-card-header">
+            <div class="lock-icon">🔒</div>
+            <h3>Secure Access Portal</h3>
+            <p>Login to Employee Management System</p>
+          </div>
+
+          <form id="loginForm" class="login-form">
+            <div class="input-group">
+              <label for="username">Username</label>
+              <div class="input-wrapper">
+                <span class="input-icon">👤</span>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔐</span>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+              </div>
+            </div>
+
+            <button type="submit" class="login-btn">Access Employee Portal</button>
+          </form>
+
+          <div class="demo-credentials">
+            <strong>Demo Credentials:</strong><br>
+            Username: admin | Password: avnl2024
+          </div>
+
+          <div class="footer-text">
+            © 2024 Armed Vehicle Nigam Limited, Avadi. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-container" style="display: none;">
+      <!-- Header -->
+      <header class="dashboard-header">
+        <div class="header-content">
+          <div class="header-left">
+            <div class="header-logos">
+              <span class="header-logo">🛡️</span>
+              <span class="header-logo">🚗</span>
+            </div>
+            <div class="header-text">
+              <h1>AVNL Employee Portal</h1>
+              <p>Armed Vehicle Nigam Limited - Avadi Division</p>
+            </div>
+          </div>
+          <button id="logoutBtn" class="logout-btn">
+            <span>🚪</span> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+          <div class="nav-menu">
+            <button class="nav-item active" data-tab="dashboard">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Dashboard</span>
+            </button>
+            <button class="nav-item" data-tab="employees">
+              <span class="nav-icon">👥</span>
+              <span class="nav-text">Employee List</span>
+            </button>
+            <button class="nav-item" data-tab="add-employee">
+              <span class="nav-icon">➕</span>
+              <span class="nav-text">Add Employee</span>
+            </button>
+            <button class="nav-item" data-tab="departments">
+              <span class="nav-icon">🏢</span>
+              <span class="nav-text">Departments</span>
+            </button>
+            <button class="nav-item" data-tab="settings">
+              <span class="nav-icon">⚙️</span>
+              <span class="nav-text">Settings</span>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <!-- Dashboard Tab -->
+          <div id="dashboard" class="tab-content active">
+            <h2>Dashboard Overview</h2>
+            <div class="stats-grid">
+              <div class="stat-card blue">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                  <h3>Total Employees</h3>
+                  <p class="stat-number">124</p>
+                </div>
+              </div>
+              <div class="stat-card green">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                  <h3>Active Staff</h3>
+                  <p class="stat-number">118</p>
+                </div>
+              </div>
+              <div class="stat-card purple">
+                <div class="stat-icon">🏢</div>
+                <div class="stat-info">
+                  <h3>Departments</h3>
+                  <p class="stat-number">8</p>
+                </div>
+              </div>
+              <div class="stat-card orange">
+                <div class="stat-icon">🆕</div>
+                <div class="stat-info">
+                  <h3>New Hires (2024)</h3>
+                  <p class="stat-number">15</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="recent-activities">
+              <h3>Recent Activities</h3>
+              <div class="activity-list">
+                <div class="activity-item">
+                  <span class="activity-icon">➕</span>
+                  <span class="activity-text">New employee Raj Kumar added to Defence Manufacturing</span>
+                  <span class="activity-time">2 hours ago</span>
+                </div>
+                <div class="activity-item">
+                  <span class="activity-icon">✏️</span>
+                  <span class="activity-text">Employee details updated for Priya Sharma</span>
+                  <span class="activity-time">5 hours ago</span>
+                </div>
+                <div class="activity-item">
+                  <span class="activity-icon">🔄</span>
+                  <span class="activity-text">Department transfer: Vikram Singh to Quality Control</span>
+                  <span class="activity-time">1 day ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Employee List Tab -->
+          <div id="employees" class="tab-content">
+            <div class="content-header">
+              <h2>Employee Directory</h2>
+              <div class="search-container">
+                <input type="text" id="searchEmployee" placeholder="Search employees..." class="search-input">
+                <button class="search-btn">🔍</button>
+              </div>
+            </div>
+
+            <div class="employee-table-container">
+              <table class="employee-table">
+                <thead>
+                  <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                  <tr>
+                    <td>AVNL001</td>
+                    <td>Rajesh Kumar</td>
+                    <td>Defence Manufacturing</td>
+                    <td>Senior Engineer</td>
+                    <td>rajesh.kumar@avnl.gov.in</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>
+                      <button class="action-btn edit">✏️</button>
+                      <button class="action-btn delete">🗑️</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>AVNL002</td>
+                    <td>Priya Sharma</td>
+                    <td>Quality Control</td>
+                    <td>QC Supervisor</td>
+                    <td>priya.sharma@avnl.gov.in</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>
+                      <button class="action-btn edit">✏️</button>
+                      <button class="action-btn delete">🗑️</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>AVNL003</td>
+                    <td>Vikram Singh</td>
+                    <td>Security Division</td>
+                    <td>Security Officer</td>
+                    <td>vikram.singh@avnl.gov.in</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>
+                      <button class="action-btn edit">✏️</button>
+                      <button class="action-btn delete">🗑️</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add Employee Tab -->
+          <div id="add-employee" class="tab-content">
+            <h2>Add New Employee</h2>
+            <form id="employeeForm" class="employee-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="empName">Full Name</label>
+                  <input type="text" id="empName" name="empName" required>
+                </div>
+                <div class="form-group">
+                  <label for="empEmail">Email Address</label>
+                  <input type="email" id="empEmail" name="empEmail" required>
+                </div>
+                <div class="form-group">
+                  <label for="empPhone">Phone Number</label>
+                  <input type="tel" id="empPhone" name="empPhone" required>
+                </div>
+                <div class="form-group">
+                  <label for="empDepartment">Department</label>
+                  <select id="empDepartment" name="empDepartment" required>
+                    <option value="">Select Department</option>
+                    <option value="Defence Manufacturing">Defence Manufacturing</option>
+                    <option value="Quality Control">Quality Control</option>
+                    <option value="Security Division">Security Division</option>
+                    <option value="Research & Development">Research & Development</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Maintenance">Maintenance</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="empPosition">Position</label>
+                  <input type="text" id="empPosition" name="empPosition" required>
+                </div>
+                <div class="form-group">
+                  <label for="empJoinDate">Join Date</label>
+                  <input type="date" id="empJoinDate" name="empJoinDate" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="submit-btn">Add Employee</button>
+                <button type="reset" class="reset-btn">Reset Form</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Departments Tab -->
+          <div id="departments" class="tab-content">
+            <h2>Department Overview</h2>
+            <div class="department-grid">
+              <div class="department-card">
+                <div class="dept-header">
+                  <span class="dept-icon">🔧</span>
+                  <h3>Defence Manufacturing</h3>
+                </div>
+                <div class="dept-stats">
+                  <p>Employees: <strong>45</strong></p>
+                  <p>Head: <strong>Mr. A.K. Sharma</strong></p>
+                  <p>Status: <span class="status active">Operational</span></p>
+                </div>
+              </div>
+              <div class="department-card">
+                <div class="dept-header">
+                  <span class="dept-icon">✅</span>
+                  <h3>Quality Control</h3>
+                </div>
+                <div class="dept-stats">
+                  <p>Employees: <strong>18</strong></p>
+                  <p>Head: <strong>Dr. Sunita Rao</strong></p>
+                  <p>Status: <span class="status active">Operational</span></p>
+                </div>
+              </div>
+              <div class="department-card">
+                <div class="dept-header">
+                  <span class="dept-icon">🛡️</span>
+                  <h3>Security Division</h3>
+                </div>
+                <div class="dept-stats">
+                  <p>Employees: <strong>25</strong></p>
+                  <p>Head: <strong>Col. Rajesh Verma</strong></p>
+                  <p>Status: <span class="status active">Operational</span></p>
+                </div>
+              </div>
+              <div class="department-card">
+                <div class="dept-header">
+                  <span class="dept-icon">🔬</span>
+                  <h3>Research & Development</h3>
+                </div>
+                <div class="dept-stats">
+                  <p>Employees: <strong>22</strong></p>
+                  <p>Head: <strong>Dr. M. Krishnan</strong></p>
+                  <p>Status: <span class="status active">Operational</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings Tab -->
+          <div id="settings" class="tab-content">
+            <h2>System Settings</h2>
+            <div class="settings-container">
+              <div class="settings-section">
+                <h3>General Settings</h3>
+                <div class="setting-item">
+                  <label for="siteName">Organization Name</label>
+                  <input type="text" id="siteName" value="Armed Vehicle Nigam Limited" readonly>
+                </div>
+                <div class="setting-item">
+                  <label for="siteLocation">Location</label>
+                  <input type="text" id="siteLocation" value="Avadi, Chennai" readonly>
+                </div>
+              </div>
+              <div class="settings-section">
+                <h3>System Information</h3>
+                <div class="info-grid">
+                  <div class="info-item">
+                    <span class="info-label">System Version:</span>
+                    <span class="info-value">v2.1.0</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Last Updated:</span>
+                    <span class="info-value">December 2024</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Total Users:</span>
+                    <span class="info-value">124</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">System Status:</span>
+                    <span class="info-value status active">Online</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Simple JavaScript for functionality
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        if (username === 'admin' && password === 'avnl2024') {
+          document.getElementById('loginSection').style.display = 'none';
+          document.getElementById('dashboardSection').style.display = 'block';
+        } else {
+          alert('Invalid credentials. Use: admin / avnl2024');
+        }
+      });
+
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('dashboardSection').style.display = 'none';
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+      });
+
+      // Tab navigation
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const tabName = this.getAttribute('data-tab');
+          
+          // Remove active class from all nav items and tab contents
+          document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+          
+          // Add active class to clicked nav item and corresponding tab
+          this.classList.add('active');
+          document.getElementById(tabName).classList.add('active');
+        });
+      });
+
+      // Employee form submission
+      document.getElementById('employeeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Employee added successfully! (Demo functionality)');
+        this.reset();
+      });
+
+      // Search functionality
+      document.getElementById('searchEmployee').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#employeeTableBody tr');
+        
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
